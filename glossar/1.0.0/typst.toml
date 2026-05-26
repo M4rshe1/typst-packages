@@ -1,0 +1,10 @@
+[package]
+name = "glossar"
+version = "1.0.0"
+authors = ["Colin Heggli <colin.heggli@gmail.com>"]
+license = "MIT"
+description = "Librarie and Utility Functions"
+
+entrypoint = "main.typ"
+
+

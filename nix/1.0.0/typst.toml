@@ -1,0 +1,8 @@
+[package]
+name = "nix"
+version = "1.0.0"
+authors = ["Colin Heggli <colin.heggli@gmail.com>"]
+license = "MIT"
+description = "Utilities when working with nix"
+
+entrypoint = "main.typ"

@@ -1,0 +1,7 @@
+[package]
+name = "resume"
+version = "2.0.0"
+authors = ["Colin Heggli <colin.heggli@gmail.com>"]
+license = "MIT"
+description = "Resume Template"
+entrypoint = "main.typ"

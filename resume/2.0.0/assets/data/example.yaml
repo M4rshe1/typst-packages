@@ -1,0 +1,44 @@
+name: Colin Heggli
+role: Senior Software Engineer
+contact:
+  number: +41 79 158 10 32
+  email: colin@heggli.dev
+  address: Löhningen, Schaffhausen
+  website: https://colin.heggli.dev
+side:
+  Skills:
+    - Projekt Management
+    - Software Entwicklung
+    - System Administration
+    - Netzwerk Administration
+  Sprachen:
+    - English (fliesend)
+    - German (Muttersprache)
+  Programmiersprachen:
+    - TypeScript
+    - Java
+    - SQL
+    - Typst
+    - Python
+    - PowerShell
+main:
+  - title: Experience
+    items:
+      - company: Georg Fischer AG
+        roles:
+          - title: Betriebsinformatiker EFZ in Ausbildung
+            from: 2022-08-01
+            to: present
+            desc: |
+              - 1. & 2. Level Support Local IT
+              - Network & System Administration
+              - Java Entwicklung für Lagerverwaltung
+  - title: Education
+    items:
+      - company: Schaffhausen University of Applied Sciences
+        roles:
+          - title: Betriebsinformatiker EFZ
+            from: 2022-08-01
+            to: present
+            desc: |
+              - Betriebsinformatiker EFZ

@@ -1,0 +1,8 @@
+[package]
+name = "util"
+version = "2.0.0"
+authors = ["Colin Heggli <colin.heggli@gmail.com>"]
+license = "MIT"
+description = "Utility Functions"
+
+entrypoint = "main.typ"

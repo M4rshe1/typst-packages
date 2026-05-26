@@ -30,3 +30,19 @@
   return s
 }
 
+
+#let stringify(item) = {
+  if type(item) == str {
+    item
+  } else if type(item) != content {
+    str(item)
+  } else if item.has("text") {
+    item.text
+  } else if item.has("children") {
+    item.children.map(stringify).join()
+  } else if item.has("body") {
+    stringify(item.body)
+  } else if item == [ ] {
+    " "
+  }
+}

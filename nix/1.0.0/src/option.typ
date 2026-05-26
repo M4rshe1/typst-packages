@@ -1,3 +1,5 @@
+#import "trl.typ"
+
 #let option(
   prefix: "",
   name: "",
@@ -57,13 +59,13 @@
         columns: (auto, 1fr),
         column-gutter: 0.8em,
         row-gutter: 0.2em,
-        if typ != none { text(style: "italic", fill: gray.darken(40%), [Typ:]) },
+        if typ != none { text(style: "italic", fill: gray.darken(40%), [#trl.get("type"):]) },
         if typ != none { raw(typ, lang: "nix") },
 
-        if default != none { text(style: "italic", fill: gray.darken(40%), [Standard:]) },
+        if default != none { text(style: "italic", fill: gray.darken(40%), [#trl.get("default"):]) },
         if default != none { raw(format-nix(default), lang: "nix") },
 
-        if example != none { text(style: "italic", fill: gray.darken(40%), [Beispiel:]) },
+        if example != none { text(style: "italic", fill: gray.darken(40%), [#trl.get("example"):]) },
         if example != none { raw(format-nix(example), lang: "nix") },
       )
     }
@@ -80,7 +82,7 @@
     // Compact Choices Section
     if choices.len() > 0 {
       v(0.8em, weak: true)
-      text(weight: "semibold", size: 0.85em, [Optionen:])
+      text(weight: "semibold", size: 0.85em, [#trl.get("options"):])
       v(0.6em, weak: true)
       pad(left: 0.5em)[
         #grid(

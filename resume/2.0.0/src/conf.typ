@@ -3,8 +3,8 @@
 #let text-gray = rgb("#4a4a4a")
 #import "@preview/fontawesome:0.6.0": fa-icon
 #import "comps.typ": exp-item, section-title, sidebar-section
-#import "@local/lib:1.0.0": dur-to-str, email
-#import "trl.typ": trl
+#import "@local/util:2.0.0": email, string
+#import "trl.typ"
 
 #let calculate-age(birthday-str) = {
   let bday = datetime(year: int(birthday-str.split("-").at(0)), month: int(birthday-str.split("-").at(1)), day: int(
@@ -21,9 +21,7 @@
 #let resume(
   data: yaml("../assets/data/example.yaml"),
   pic: image("../assets/imgs/profile.png"),
-  lang: "en",
 ) = {
-  set text(lang: lang)
   set page(
     margin: (left: 0pt, right: 0pt, top: 0pt, bottom: 0pt),
     fill: white,
@@ -66,14 +64,14 @@
           ]
         }
 
-        sidebar-section(trl.at(lang).contact)
+        sidebar-section(trl.get("contact"))
         grid(
           columns: (1fr, 8fr),
           row-gutter: 10pt,
           align: (left, left),
           fa-icon("phone"), [#link("tel:" + data.contact.number, data.contact.number)],
           fa-icon("envelope"), [#email(data.contact.email)],
-          fa-icon("cake-candles"), [#calculate-age(data.birthday)  #trl.at(lang).years-old],
+          fa-icon("cake-candles"), [#calculate-age(data.birthday)  #trl.get("years-old")],
           fa-icon("map-pin"), [#data.contact.address],
           fa-icon("globe"), [#link(data.contact.website, data.contact.website)],
         )
@@ -93,7 +91,7 @@
       right: 30pt,
       bottom: 20pt,
       {
-        section-title(context trl.at(text.lang).about)
+        section-title(trl.get("about"))
         text(data.about)
         for section in data.main {
           section-title(section.title)

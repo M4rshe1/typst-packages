@@ -1,4 +1,4 @@
-#import "@local/lib:1.0.0": dur-to-str
+#import "@local/util:2.0.0": time as tm
 #import "trl.typ": trl
 
 
@@ -32,7 +32,7 @@
     panic("From date is after to date")
   }
 
-  let dur = dur-to-str(time, style: "long", precision: 2)
+  let dur = tm.dur-to-str(time, style: "long", precision: 2)
 
   grid(
     columns: (1fr, auto),

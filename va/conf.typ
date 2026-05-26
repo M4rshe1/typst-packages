@@ -1,4 +1,4 @@
-#import "@local/lib:1.0.0": light-gray, transparent
+#import "@local/util:1.0.0": light-gray, transparent
 #import "@preview/wordometer:0.1.4": total-characters, total-words, word-count
 #import "@preview/glossy:0.8.0": glossary, init-glossary
 #import "@local/glossar:1.0.0": glossar-theme-german-table, theme-show-term
@@ -31,7 +31,6 @@
   gloss: yaml("gloss.yml"),
   show-term: theme-show-term,
   appendix: [],
-  info: false,
   doc,
 ) = {
   set document(title: title, author: author.first-name + " " + author.last-name, date: created, description: subtitle)
@@ -157,7 +156,7 @@
     )
   }
 
-  if (info) {
+  if ("x-preview" in sys.inputs) {
     box(
       fill: red.lighten(80%),
       inset: 10pt,
@@ -166,7 +165,7 @@
       stroke: red + 4pt,
       [
         #text(16pt, fill: black, weight: "bold", hyphenate: false)[
-          ACHTUNG: Bevor das Dokument abgegeben wird die "info" flag in der Template config entfernen damit diese Box verschwindet.
+          ACHTUNG: Diese Box ist nur während des Previews sichtbar und wird nicht im finalen Dokument angezeigt.
         ]
         #linebreak()
         #linebreak()

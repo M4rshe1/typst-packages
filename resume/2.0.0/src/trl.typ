@@ -12,3 +12,7 @@
     years-old: "Jahre alt",
   ),
 )
+
+#let get(key) = {
+  context trl.at(text.lang).at(key)
+}

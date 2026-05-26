@@ -1,3 +1,7 @@
-mkdir -p ~/.cache/typst/packages/local
+#!/bin/bash
 
-ln -sfT ~/projects/typst-docs/ ~/.cache/typst/packages/local
+mkdir -p ~/.cache/typst/packages
+
+rm -rf ~/.cache/typst/packages/local
+
+ln -sfn $(pwd) ~/.cache/typst/packages/local

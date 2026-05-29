@@ -36,21 +36,20 @@
 
   grid(
     columns: (1fr, auto),
-    text(size: 9pt, weight: "medium")[#title],
+    text(size: 9pt, weight: "bold")[#title],
     text(
       style: "italic",
       size: 8.5pt,
     )[#from-date.display("[month repr:short] [year]") - #(if (to == "present") { context trl.at(text.lang).present } else { to-date.display("[month repr:short] [year]") }) (#dur)],
   )
-  v(2pt)
+  v(8pt, weak: true)
   text(size: 8.5pt)[#eval(desc, mode: "markup")]
   v(6pt)
 }
 
-#let exp-item(company, ..roles) = {
-  text(weight: "bold")[#company]
-  for rolee in roles.pos() {
-    let role = rolee.at(0)
+#let exp-item(company, roles) = {
+  text(weight: "bold", size: 11pt)[#company]
+  for role in roles {
     exp-role(role.title, role.from, role.to, role.desc)
   }
   v(4pt)

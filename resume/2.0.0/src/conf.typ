@@ -80,7 +80,7 @@
         for section in data.side.keys() {
           sidebar-section(section)
           for item in data.side.at(section) {
-            text(size: 8.5pt)[#item \ ]
+            text(size: 8.5pt)[#eval(item, mode: "markup") \ ]
           }
         }
       },

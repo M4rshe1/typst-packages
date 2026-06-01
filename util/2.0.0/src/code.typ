@@ -19,12 +19,11 @@
     }
   } else if (type(high) == array) {
     for line in high {
-      lines.push((line, colormap.at("h")))
+      lines.push((line, colormap.at(colormap.keys().first())))
     }
   }
 
   [
-
     #figure(
       kind: raw,
       zebraw(

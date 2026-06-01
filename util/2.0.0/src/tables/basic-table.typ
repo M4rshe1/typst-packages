@@ -28,7 +28,7 @@
       columns: columns,
       rows: auto,
       fill: (x, y) => {
-        let fill-color = if (y == 0) { light-gray } else { white }
+        let fill-color = if (y == 0) { colors.light-gray } else { white }
         let custom-fill = none
         if (type(fill) == function) { custom-fill = fill(x, y, body.at(y).at(x)) }
         if (type(custom-fill) == color) { custom-fill } else { fill-color }

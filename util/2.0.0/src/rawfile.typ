@@ -2,7 +2,7 @@
 #import "code.typ": default-colormap
 
 
-#let rawfile(reader: function, path, lang, declarations, offset: 0, colormap: default-colormap) = {
+#let rawfile(reader: function, path: str, lang: str, declarations: array, offset: 0, colormap: default-colormap) = {
   let file-name = path.split("/").at(-1)
   let lang = if (lang == none) { path.split(".").at(-1) } else { lang }
   let raw-content = "```" + lang + "\n" + reader(path) + "\n```"

@@ -24,8 +24,10 @@
   }
 
   [
+    #show figure: set block(breakable: true)
     #figure(
       kind: raw,
+      supplement: [Code],
       zebraw(
         highlight-lines: lines,
         codeblock,
